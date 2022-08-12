@@ -1,0 +1,46 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="         http://www.springframework.org/schema/beans          http://www.springframework.org/schema/beans/spring-beans.xsd         http://www.springframework.org/schema/context          http://www.springframework.org/schema/context/spring-context.xsd         http://www.springframework.org/schema/aop         http://www.springframework.org/schema/aop/spring-aop.xsd         http://www.springframework.org/schema/tx         http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<!-- Bean 元素的继承-->
+	<bean id="baseBean" abstract="true">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+
+
+	<!-- 配置DAO -->
+	<bean id="employeeDAO" class="com._520it.wms.dao.impl.EmployeeDAOImpl" parent="baseBean">
+	</bean>
+
+	<bean id="departmentDAO" class="com._520it.wms.dao.impl.DepartmentDAOImpl" parent="baseBean">
+	</bean>
+
+	<bean id="permissionDAO" class="com._520it.wms.dao.impl.PermissionDAOImpl" parent="baseBean">
+	</bean>
+
+	<bean id="roleDAO" class="com._520it.wms.dao.impl.RoleDAOImpl" parent="baseBean">
+	</bean>
+
+	<bean id="systemMenuDAO" class="com._520it.wms.dao.impl.SystemMenuDAOImpl" parent="baseBean">
+</bean>
+	<bean id="brandDAO" class="com._520it.wms.dao.impl.BrandDAOImpl" parent="baseBean">
+</bean>
+	<bean id="supplierDAO" class="com._520it.wms.dao.impl.SupplierDAOImpl" parent="baseBean">
+</bean>
+	<bean id="productDAO" class="com._520it.wms.dao.impl.ProductDAOImpl" parent="baseBean">
+</bean>
+	<bean id="orderBillDAO" class="com._520it.wms.dao.impl.OrderBillDAOImpl" parent="baseBean">
+</bean>
+	<bean id="depotDAO" class="com._520it.wms.dao.impl.DepotDAOImpl" parent="baseBean">
+</bean>
+	<bean id="stockIncomeBillDAO" class="com._520it.wms.dao.impl.StockIncomeBillDAOImpl" parent="baseBean">
+</bean>
+	<bean id="productStockDAO" class="com._520it.wms.dao.impl.ProductStockDAOImpl" parent="baseBean">
+</bean>
+	<bean id="clientDAO" class="com._520it.wms.dao.impl.ClientDAOImpl" parent="baseBean">
+</bean>
+	<bean id="stockOutcomeBillDAO" class="com._520it.wms.dao.impl.StockOutcomeBillDAOImpl" parent="baseBean">
+	</bean>
+	<bean id="chartDAO" class="com._520it.wms.dao.impl.ChartDAOImpl" parent="baseBean"/>
+
+	<bean id="saleAccountDAO" class="com._520it.wms.dao.impl.SaleAccountDAOImpl" parent="baseBean"/>
+
+</beans>
